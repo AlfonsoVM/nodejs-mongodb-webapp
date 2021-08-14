@@ -1,2 +1,2 @@
 # nodejs-mongodb-webapp
-Learning to make a webapp with NodeJS and MongoDB.
+Learning how to make a webapp with NodeJS and MongoDB.
