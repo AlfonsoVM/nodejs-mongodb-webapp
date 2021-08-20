@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Student = require('./models/Student');
 
@@ -18,17 +18,16 @@ function mongoConnect() {
     })
 }
 
-
 module.exports = { mongoConnect };
 
 //mongodb querys
 
-// //Example Student
-// const student = new Student({
-//     name: 'Alfonso',
-//     age: 23,
-//     grade: 1
-// });
+//Example Student
+const student = new Student({
+    name: 'Alfonso',
+    age: 23,
+    grade: 1
+});
 
 function saveStudent() {
     student.save()

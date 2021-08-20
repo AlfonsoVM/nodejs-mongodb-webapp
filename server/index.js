@@ -1,13 +1,12 @@
-//modules
-// const dotenv = require('dotenv').config();
+// modules
+require('dotenv').config();
+const path = require('path');
 const express = require('express');     // const http = require('http');
 const mongoose = require('mongoose');
 const { mongoConnect } = require('./mongo');
-// require('./mongo')
+const Student = require('./models/Student');
 
 const app = express();
-const path = require('path');
-const Student = require('./models/Student');
 
 //variables
 const APP_PORT = process.env.APP_PORT || 3001;
@@ -16,10 +15,17 @@ const HOST = 'localhost';
 app.use(express.static(__dirname));
 app.use(express.urlencoded({extended: true}));
 
+//load page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/html/index.html'));
     // res.send('<h1>Hello World</h1>');
 });
+
+//load students
+// mongoConnect();
+app.get('/', (req, res) => {
+
+})
 
 //add student
 app.post("/", (req, res) => {
@@ -43,7 +49,9 @@ app.post("/", (req, res) => {
     })
     .catch(err => {
         console.log(err);
-    })
+    });
+
+    //Reload Page
     res.redirect('/');
 })
 

@@ -10,5 +10,4 @@ const studentSchema = new Schema({
     grade: Number
 });
 
-// exports.Student = model('Student', studentSchema); 
-module.exports = model('Student', studentSchema); 
+module.exports = model('Student', studentSchema);
