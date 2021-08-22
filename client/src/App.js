@@ -1,20 +1,22 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navigation from './components/Navbar';
 import Home from './components/Home';
-import Students from './components/Students';
+import StudentAdd from './components/StudentAdd';
+import StudentList from './components/StudentList';
 
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navigation/>
 
       <Route path="/" exact>
         <Home/>
       </Route>
 
-      <Route path="students">
-        <Students/>
+      <Route path="/students">
+        <StudentAdd/>
+        <StudentList/>
       </Route>
     </Router>
   );
